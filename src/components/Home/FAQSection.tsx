@@ -44,7 +44,7 @@ const faqs: FAQItem[] = [
 
 const FALL_BACK_CONTENT: FAQ = {
   title: "FAQ SECTION",
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  description: "Explore FAQs for quick support, guidance, and information",
   questionCard: faqs,
 }
 

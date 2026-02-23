@@ -105,15 +105,12 @@ const HowItWorksSection: React.FC = () => {
               {content?.card.map((step, index) => (
                 <div
                   key={step._id}
-                  className={`flex items-start gap-6 ${
-                    index==0 ? 'ml-12' : ''
-                  }`}
+                  className={`flex items-start gap-6 p-px rounded-2xl transition-all duration-300 ${index%2==0 ? "bg-gradient-to-r from-[#1F4FD8] to-[#FFFFFF]" : "bg-gradient-to-l from-[#1F4FD8] to-[#FFFFFF]"}`}
                 >
                   {/* Content card */}
                   <div
-                    className={`flex-1 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 ${
-                      step.alignment === 'right' ? 'md:mr-12' : 'md:ml-12'
-                    } ${index===isActiveIndex ? "bg-linear-to-r from-[#1F4FD833] to-[#FFFFFF00]" : ""} border border-gradient-to-r from-[#1F4FD833] to-[#FFFFFF00]`}
+                    className={`flex-1 rounded-2xl p-6 shadow-lg hover:shadow-xl
+                      bg-white transition-all duration-300 ${index===isActiveIndex ? index%2==0 ? "bg-linear-to-r from-[#1F4FD833] to-[#FFFFFF00]" : "bg-linear-to-l from-[#1F4FD833] to-[#FFFFFF00]" : "bg-white"} border border-gradient-to-r from-[#1F4FD833] to-[#FFFFFF00]`}
                   >
                     <h3 className="text-[#1F4FD8] mb-3 font-semibold text-base leading-none">
                       {step.title}
@@ -126,15 +123,11 @@ const HowItWorksSection: React.FC = () => {
               )) ?? FALLBACK_CONTENT.card.map((step, index) => (
                 <div
                   key={step._id}
-                  className={`flex items-start gap-6 ${
-                    index==0 ? 'ml-12' : ''
-                  }`}
+                  className={`flex items-start gap-6`}
                 >
                   {/* Content card */}
                   <div
-                    className={`flex-1 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 ${
-                      step.alignment === 'right' ? 'md:mr-12' : 'md:ml-12'
-                    } ${index===FALLBACK_CONTENT?.card?.length-1 ? "bg-linear-to-r from-[#1F4FD833] to-[#FFFFFF00]" : ""} border border-gradient-to-r from-[#1F4FD833] to-[#FFFFFF00]`}
+                    className={`flex-1 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300  border border-gradient-to-r from-[#1F4FD833] to-[#FFFFFF00]`}
                   >
                     <h3 className="text-[#1F4FD8] mb-3 font-semibold text-base leading-none">
                       {step.title}
@@ -150,11 +143,11 @@ const HowItWorksSection: React.FC = () => {
               <div className='absolute z-10 flex flex-col items-center gap-8'>
                 {
                   Array.from({ length: steps.length }).map((_, index) => (
-                    <div key={index} className={`h-20 w-20 rounded-full border-8 border-[#1F4FD8] flex items-center justify-center text-[48px] font-poppins font-semibold text-[#1F4FD8] font-bold ${isActiveIndex === index ? "bg-[#1F4FD8] text-white" : ""}`}>{index+1}</div>
+                    <div key={index} className={`h-20 w-20 rounded-full border-8 border-[#1F4FD8] flex items-center justify-center text-[48px] font-poppins font-semibold text-[#1F4FD8] font-bold ${isActiveIndex === index ? "bg-[#1F4FD8] text-white" : "bg-white"}`}>{index+1}</div>
                   ))
                 }
               </div>
-                <div className='absolute left-1 h-full w-1 bg-gradient-to-b from-[#2C52BF00] via-[#2C52BF] to-[#2C52BF00]'></div>
+                <div className='absolute  h-full w-1 bg-gradient-to-b from-[#2C52BF00] via-[#2C52BF] to-[#2C52BF00]'></div>
               </div>
           </div>
 
